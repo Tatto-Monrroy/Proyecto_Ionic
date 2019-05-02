@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar color="twitter">
+        <ion-title text-center>
+            <ion-icon name="cart" item-start> Tienda </ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2 text-center>Crear Vendedores</h2>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Codigo Empleado</ion-label>
+            <ion-input type='text' name='codigo_vendedor' [(ngModel)]="model.codigo_vendedor"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Contraseña</ion-label>
+            <ion-input type='text' name='contrasena' [(ngModel)]="model.contrasena"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Nombre</ion-label>
+            <ion-input type='text' name='nombre' [(ngModel)]="model.nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Apellido</ion-label>
+            <ion-input type='text' name='apellido' [(ngModel)]="model.apellido"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Fecha Nacimiento</ion-label>
+            <!-- <ion-input type='date' name='fecha_nacimiento' [(ngModel)]="vendedor.fecha_nacimiento"></ion-input> -->
+            <ion-datetime displayFormat="MMM DD YYYY" type='date' name='fecha_nacimiento' [(ngModel)]="model.fecha_nacimiento"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Correo Electronico</ion-label>
+            <ion-input type='text' name='correo_electronico' [(ngModel)]="model.correo_electronico"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Telefono</ion-label>
+            <ion-input type='text' name='telefono' [(ngModel)]="model.telefono"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Pregunta</ion-label>
+            <ion-input type='text' name='pregunta' [(ngModel)]="model.pregunta"></ion-input>
+        </ion-item>
+
+        <button ion-button block (click)="crearVendedor()" color="primary">Crear Usuario</button>
+    </ion-list>
+</ion-content>

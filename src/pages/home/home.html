@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="twitter">
+        <ion-title text-center>
+            <ion-icon name="cart" item-start> Tienda </ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="refrescar($event);">
+        <ion-refresher-content>
+        </ion-refresher-content>
+    </ion-refresher>
+    <h2 text-center>Vendedores</h2>
+    <ion-list>
+        <ion-item-sliding *ngFor='let vendedor of vendedores'>
+
+            <ion-item (click)="openVendedor(vendedor.id)">
+                {{vendedor.id}} - {{vendedor.codigo_vendedor}} - {{vendedor.nombre}} {{vendedor.apellido}}
+            </ion-item>
+
+            <ion-item-options side="left">
+                <button ion-button color="primary" (click)="editarVendedor(vendedor.id)">
+                            <ion-icon name="md-create"></ion-icon>
+                            Editar
+                        </button>
+
+                <button ion-button color="danger" (click)="eliminarVendedor(vendedor)">
+                    <ion-icon name="trash"></ion-icon>
+                    Eliminar
+                </button>
+            </ion-item-options>
+
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
